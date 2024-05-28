@@ -1,20 +1,10 @@
-# Use the official Tomcat image from the Docker Hub
-FROM tomcat:9.0
 
-# Set the working directory to Tomcat's home
-WORKDIR /usr/local/tomcat
+FROM tomcat:9.0.89-jdk21-openjdk
 
-# Remove the default ROOT webapp
-RUN rm -rf webapps/ROOT
+COPY renuka1.war /usr/local/tomcat/webapps/
 
-# Copy the WAR file to the webapps directory of Tomcat
-COPY target/renuka1.war webapps/ROOT.war
-
-# Change the Tomcat HTTP port from 8080 to 8180
-RUN sed -i 's/port="8080"/port="8180"/' conf/server.xml
-
-# Expose port 8180 internally
+# Expose port 8080 (default Tomcat port)
 EXPOSE 8180
 
-# Start Tomcat
+# Start Tomcat when the container starts
 CMD ["catalina.sh", "run"]
