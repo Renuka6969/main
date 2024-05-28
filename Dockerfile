@@ -2,9 +2,9 @@
 FROM tomcat:latest
 
 # Copy the WAR file from your local system into the webapps directory of Tomcat in the Docker image
-COPY path/to/your/application.war /usr/local/tomcat/webapps/
+COPY C:/workspaces/renuka1/renuka1/target/renuka1.war /usr/local/tomcat/webapps/
 
-# Expose port 8080 to allow outside access to the Tomcat server
+# Expose port 8180 to allow outside access to the Tomcat server
 EXPOSE 8180
 
 # Command to start Tomcat when the Docker container starts
