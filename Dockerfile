@@ -8,7 +8,7 @@ RUN rm -rf /usr/local/tomcat/webapps/ROOT
 COPY target/renuka1.war /usr/local/tomcat/webapps/ROOT.war
 
 # Expose port 8080 (or the port your Tomcat is configured to run on)
-EXPOSE 8080
+EXPOSE 8180
 
 # Start Tomcat
 CMD ["catalina.sh", "run"]
