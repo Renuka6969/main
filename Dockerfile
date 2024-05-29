@@ -8,7 +8,7 @@ RUN rm -rf /usr/local/tomcat/webapps/*
 COPY renuka1.war /usr/local/tomcat/webapps/
 
 # Expose port 8180 to the outside world
-EXPOSE 8180
+EXPOSE 8080
 
 # Start Tomcat when the container launches
 CMD ["catalina.sh", "run"]
