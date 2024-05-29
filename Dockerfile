@@ -1,12 +1,14 @@
-# Use the official Tomcat image as the base image
-FROM tomcat:latest
+# Use the official Tomcat 9 image as base
+FROM tomcat:9
 
-# Copy the WAR file from your local system into the webapps directory of Tomcat in the Docker image
-COPY renuka1.war /usr/local/tomcat/webapps/
+# Remove existing ROOT application
+RUN rm -rf /usr/local/tomcat/webapps/*
 
+# Copy your WAR file into the Tomcat webapps directory
+COPY target/renuka1.war /usr/local/tomcat/webapps/
 
-# Expose port 8180 to allow outside access to the Tomcat server
+# Expose port 8180 to the outside world
 EXPOSE 8180
 
-# Command to start Tomcat when the Docker container starts
+# Start Tomcat when the container launches
 CMD ["catalina.sh", "run"]

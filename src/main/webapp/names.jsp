@@ -8,7 +8,7 @@
     <h1>Names from Database</h1>
     <%
         // Database connection parameters
-        String jdbcUrl = "jdbc:mysql://localhost:3306/exampledb";
+        String jdbcUrl = "jdbc:mysql://db:3306/exampledb";
         String jdbcUser = "root";
         String jdbcPassword = "password";
         
